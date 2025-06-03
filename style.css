@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    color: #333;
+    text-align: center;
+}
+header {
+    background: #222;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+#hero {
+    perspective: 1000px;
+    margin: 40px auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.cube {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: spin 10s infinite linear;
+}
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(100,100,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid #fff;
+}
+.front  { transform: translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+@keyframes spin {
+    from { transform: rotateX(0) rotateY(0); }
+    to   { transform: rotateX(360deg) rotateY(360deg); }
+}
+#editor {
+    margin: 40px auto;
+}
+#canvas {
+    border: 1px solid #ccc;
+    max-width: 100%;
+}
+.controls button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
