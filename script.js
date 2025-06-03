@@ -2,6 +2,7 @@ const imageInput = document.getElementById('imageInput');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 let img = new Image();
+let originalData = null;
 
 imageInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
@@ -12,6 +13,7 @@ imageInput.addEventListener('change', (e) => {
             canvas.width = img.width;
             canvas.height = img.height;
             ctx.drawImage(img, 0, 0);
+            originalData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         };
         img.src = ev.target.result;
     };
@@ -19,7 +21,10 @@ imageInput.addEventListener('change', (e) => {
 });
 
 document.getElementById('retouchBtn').addEventListener('click', () => {
-    if (!img.src) return;
+    if (!originalData) {
+        alert('Veuillez d\'abord charger une image.');
+        return;
+    }
     // Simple retouch: increase brightness
     const imgData = ctx.getImageData(0,0,canvas.width,canvas.height);
     const data = imgData.data;
@@ -32,7 +37,10 @@ document.getElementById('retouchBtn').addEventListener('click', () => {
 });
 
 document.getElementById('bgRemoveBtn').addEventListener('click', () => {
-    if (!img.src) return;
+    if (!originalData) {
+        alert('Veuillez d\'abord charger une image.');
+        return;
+    }
     const imgData = ctx.getImageData(0,0,canvas.width,canvas.height);
     const data = imgData.data;
     // naive background removal based on top-left pixel
@@ -46,4 +54,9 @@ document.getElementById('bgRemoveBtn').addEventListener('click', () => {
         }
     }
     ctx.putImageData(imgData,0,0);
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+    if (!originalData) return;
+    ctx.putImageData(originalData, 0, 0);
 });
