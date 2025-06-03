@@ -1,33 +1,64 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Design PhotoRoom Like</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Studio 3D Design</h1>
-        <p>Un site inspiré de PhotoRoom avec effets 3D et outils IA.</p>
-    </header>
-    <section id="hero">
-        <div class="cube">
-            <div class="face front">Zelda 3D</div>
-            <div class="face back"></div>
-            <div class="face right"></div>
-            <div class="face left"></div>
-            <div class="face top"></div>
-            <div class="face bottom"></div>
-        </div>
-    </section>
-    <section id="editor">
-        <input type="file" id="imageInput" accept="image/*">
-        <canvas id="canvas"></canvas>
-        <div class="controls">
-            <button id="retouchBtn">Retouche AI</button>
-            <button id="bgRemoveBtn">Supprimer arrière-plan</button>
-        </div>
-    </section>
-    <script src="script.js"></script>
-</body>
-</html>
++<!DOCTYPE html>
++<html lang="fr">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Studio 3D Design</title>
++    <link rel="stylesheet" href="style.css">
++</head>
++<body>
++    <header>
++        <div class="container">
++            <h1 class="logo">Studio 3D Design</h1>
++        </div>
++    </header>
++    <main>
++        <section id="intro" class="container">
++            <h2 class="tagline">Un site inspiré de PhotoRoom avec effets 3D et outils IA.</h2>
++            <div class="hero">
++                <div class="hero-images">
++                    <img src="https://via.placeholder.com/300x500.png?text=Mobile" alt="Aperçu mobile" class="phone">
++                    <img src="https://via.placeholder.com/400x300.png?text=Produit" alt="Produit" class="product">
++                    <div class="cube">
++                        <div class="face front">3D</div>
++                        <div class="face back"></div>
++                        <div class="face right"></div>
++                        <div class="face left"></div>
++                        <div class="face top"></div>
++                        <div class="face bottom"></div>
++                    </div>
++                </div>
++                <div class="hero-actions">
++                    <button id="startBtn" class="primary">Commencer gratuitement</button>
++                    <button id="heroChooseBtn" class="secondary">Choisir une image</button>
++                    <input type="file" id="heroFile" accept="image/*" hidden>
++                </div>
++            </div>
++        </section>
++
++        <section id="editor" class="container">
++            <h2>Éditeur d'image</h2>
++            <div id="canvas-area">
++                <canvas id="canvasBefore" width="500" height="400"></canvas>
++                <canvas id="canvasAfter" width="500" height="400"></canvas>
++            </div>
++            <div class="controls">
++                <button id="selectBtn" class="secondary">Choisir une image</button>
++                <input type="file" id="imageInput" accept="image/*" hidden>
++                <button id="bgRemoveBtn" class="primary">Supprimer arrière-plan</button>
++                <button id="retouchBtn" class="primary">Retouche AI</button>
++                <button id="resetBtn" class="secondary">Reset</button>
++            </div>
++        </section>
++    </main>
++
++    <footer>
++        <div class="container">&copy; 2025 Studio 3D Design</div>
++    </footer>
++
++    <script src="script.js"></script>
++</body>
++</html>
+ 
+EOF
+)
