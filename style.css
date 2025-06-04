@@ -18,6 +18,37 @@ header {
     color: var(--light);
 }
 
+/* navigation */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    transition: color 0.3s, background 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+nav a.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
 header .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -111,28 +142,35 @@ main {
     gap: 1rem;
 }
 
-button {
+.start-link {
+    text-align: center;
+}
+
+button,
+.primary,
+.secondary {
     padding: 0.8rem 1.5rem;
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
     border: none;
+    display: inline-block;
     transition: background 0.3s;
 }
 
-button.primary {
+.primary {
     background: var(--primary);
     color: var(--light);
 }
-button.primary:hover {
+.primary:hover {
     background: #5639d7;
 }
-button.secondary {
+.secondary {
     background: var(--light);
     color: var(--dark);
     border: 1px solid var(--dark);
 }
-button.secondary:hover {
+.secondary:hover {
     background: #f0f0f0;
 }
 
