@@ -1,3 +1,39 @@
+// Gestion simple de navigation type SPA
+const navLinks = document.querySelectorAll('nav a[data-target]');
+const toolSections = document.querySelectorAll('section.tool');
+
+function showSection(id) {
+    toolSections.forEach(sec => {
+        if (sec.id === id) {
+            sec.classList.add('active');
+        } else {
+            sec.classList.remove('active');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.target === id);
+    });
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        showSection(link.dataset.target);
+    });
+});
+
+const startLink = document.querySelector('.start-link');
+if (startLink) {
+    startLink.addEventListener('click', e => {
+        e.preventDefault();
+        showSection('remove');
+        window.scrollTo({ top: startLink.getBoundingClientRect().bottom, behavior: 'smooth' });
+    });
+}
+
+// section par défaut
+showSection('remove');
+
 // Script commun pour les pages d'édition
 const fileInput = document.getElementById('imageInput');
 const selectBtn = document.getElementById('selectBtn');
