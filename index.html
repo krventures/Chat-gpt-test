@@ -9,7 +9,15 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="logo">Studio 3D Design</h1>
+            <nav>
+                <h1 class="logo"><a href="index.html">Studio 3D Design</a></h1>
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="remove-bg.html">Supprimer fond</a></li>
+                    <li><a href="retouche.html">Retouche IA</a></li>
+                    <li><a href="export.html">Exporter</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <main>
@@ -29,33 +37,13 @@
                     </div>
                 </div>
                 <div class="hero-actions">
-                    <button id="startBtn" class="primary">Commencer gratuitement</button>
-                    <button id="heroChooseBtn" class="secondary">Choisir une image</button>
-                    <input type="file" id="heroFile" accept="image/*" hidden>
+                    <a href="remove-bg.html" class="primary start-link">Commencer gratuitement</a>
                 </div>
             </div>
         </section>
-
-        <section id="editor" class="container">
-            <h2>Éditeur d'image</h2>
-            <div id="canvas-area">
-                <canvas id="canvasBefore" width="500" height="400"></canvas>
-                <canvas id="canvasAfter" width="500" height="400"></canvas>
-            </div>
-            <div class="controls">
-                <button id="selectBtn" class="secondary">Choisir une image</button>
-                <input type="file" id="imageInput" accept="image/*" hidden>
-                <button id="bgRemoveBtn" class="primary">Supprimer arrière-plan</button>
-                <button id="retouchBtn" class="primary">Retouche AI</button>
-                <button id="resetBtn" class="secondary">Reset</button>
-            </div>
-        </section>
     </main>
-
     <footer>
         <div class="container">&copy; 2025 Studio 3D Design</div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
