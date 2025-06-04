@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio 3D Design</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container topbar">
+            <h1 class="logo">Studio 3D Design</h1>
             <nav>
-                <h1 class="logo"><a href="index.html">Studio 3D Design</a></h1>
                 <ul>
-                    <li><a href="index.html" class="active">Accueil</a></li>
-                    <li><a href="remove-bg.html">Supprimer fond</a></li>
-                    <li><a href="retouche.html">Retouche IA</a></li>
-                    <li><a href="export.html">Exporter</a></li>
+                    <li><a href="#" data-target="remove" class="active"><i class="fa-solid fa-scissors"></i><span>Supprimer fond</span></a></li>
+                    <li><a href="#" data-target="retouche"><i class="fa-solid fa-magic"></i><span>Retouche IA</span></a></li>
+                    <li><a href="#" data-target="fond"><i class="fa-solid fa-image"></i><span>Fond IA</span></a></li>
+                    <li><a href="#" data-target="agrandir"><i class="fa-solid fa-expand"></i><span>Agrandisseur IA</span></a></li>
+                    <li><a href="#" data-target="logo"><i class="fa-solid fa-pen-nib"></i><span>Logo IA</span></a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <section id="intro" class="container">
+        <section id="hero" class="container">
             <h2 class="tagline">Un site inspiré de PhotoRoom avec effets 3D et outils IA.</h2>
             <div class="hero">
                 <div class="hero-images">
@@ -37,13 +39,48 @@
                     </div>
                 </div>
                 <div class="hero-actions">
-                    <a href="remove-bg.html" class="primary start-link">Commencer gratuitement</a>
+                    <a href="#" class="primary start-link">Commencer gratuitement</a>
                 </div>
             </div>
+        </section>
+
+        <section id="remove" class="tool container">
+            <h2>Supprimer l'arrière-plan</h2>
+            <div id="canvas-area">
+                <canvas id="canvasBefore" width="500" height="400"></canvas>
+                <canvas id="canvasAfter" width="500" height="400"></canvas>
+            </div>
+            <div class="controls">
+                <button id="selectBtn" class="secondary">Choisir une image</button>
+                <input type="file" id="imageInput" accept="image/*" hidden>
+                <button id="bgRemoveBtn" class="primary">Supprimer arrière-plan</button>
+                <button id="resetBtn" class="secondary">Reset</button>
+            </div>
+        </section>
+
+        <section id="retouche" class="tool container">
+            <h2>Retouche IA</h2>
+            <p>Fonction en développement.</p>
+        </section>
+
+        <section id="fond" class="tool container">
+            <h2>Fond IA</h2>
+            <p>Fonction en développement.</p>
+        </section>
+
+        <section id="agrandir" class="tool container">
+            <h2>Agrandisseur IA</h2>
+            <p>Fonction en développement.</p>
+        </section>
+
+        <section id="logo" class="tool container">
+            <h2>Logo IA</h2>
+            <p>Fonction en développement.</p>
         </section>
     </main>
     <footer>
         <div class="container">&copy; 2025 Studio 3D Design</div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
