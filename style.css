@@ -38,6 +38,9 @@ nav a {
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     transition: color 0.3s, background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 nav a:hover {
@@ -49,12 +52,17 @@ nav a.active {
     border-bottom: 2px solid var(--primary);
 }
 
-header .container {
+nav a i {
+    font-size: 1rem;
+}
+
+header .topbar {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
@@ -71,6 +79,14 @@ main {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.tool {
+    display: none;
+    padding-top: 2rem;
+}
+.tool.active {
+    display: block;
 }
 
 .tagline {
